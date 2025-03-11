@@ -14,7 +14,7 @@ const tickets: Ticket[] = [
 
 export default function Tickets() {
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView>
     
       <FlatList
         data={tickets}
@@ -33,10 +33,6 @@ export default function Tickets() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 10,
-  },
   item: {
     padding: 10,
     borderBottomWidth: 1,
