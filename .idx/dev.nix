@@ -3,14 +3,14 @@
 { pkgs, ... }: {
   #  Which nixpkgs channel to use.  
   channel = "stable-23.11"; # or "unstable" 
-  # Use https://search.nixos.org/packages to find packages
+  # Use https://search.nixos.org/packages to find packagess
   packages = [ pkgs.nodejs_20 pkgs.nodejs_20 pkgs.jdk21_headless pkgs.gradle pkgs.bun];
   # Sets environment variables in the workspace
   env = { EXPO_USE_FAST_RESOLVER = "1"; };
   idx = {
     # Search for the extensions you want on https://open-vsx.org/ and use "publisher.id"
     extensions = [
-      "msjsdiag.vscode-react-native"
+      "msjsdiag.vscode-react-native" 
       "fwcd.kotlin"
     ];
     
