@@ -35,28 +35,28 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Home',
-          tabBarIcon: ({ color }) => <AntDesign name="home" size={24} color="red" />,
+          tabBarIcon: ({ color }) => <AntDesign name="home" size={24} color={color} />,
         }}
       />
       <Tabs.Screen
         name="explore"
         options={{
           title: 'Explore',
-          tabBarIcon: ({ color }) => <MaterialIcons name="explore" size={24} color="black" />,
+          tabBarIcon: ({ color }) => <MaterialIcons name="explore" size={24} color={color} />,
         }}
       />
       <Tabs.Screen
         name="submit"
         options={{
           title: 'Submit',
-          tabBarIcon: ({ color }) => <FontAwesome name="send" size={24} color="black"  />,
+          tabBarIcon: ({ color }) => <FontAwesome name="send" size={24} color={color}  />,
         }}
       />
       <Tabs.Screen
         name="tickets"
         options={{
           title: 'Tickets',
-          tabBarIcon: ({ color }) => <Entypo name="ticket" size={24} color="black" />,
+          tabBarIcon: ({ color }) => <Entypo name="ticket" size={24} color={color} />,
         }}
       />
     </Tabs>
