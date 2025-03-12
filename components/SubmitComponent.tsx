@@ -204,7 +204,7 @@ const SubmitComponent: React.FC<SubmitScreenProps> = ({ isSubscribed }) => {
     }, [isSubscribed, trackUrl, artistName, trackTitle, avatarUrl, selectedRadioStationIds, trackInfo]); // Add radioStations to dependencies (important for email retrieval)
 
     return (
-        <SafeAreaView>
+        <SafeAreaView style={styles.container}>
         <ScrollView keyboardShouldPersistTaps="handled">
             <Text style={styles.title}>Submit Your Track</Text>
 
@@ -266,6 +266,12 @@ const SubmitComponent: React.FC<SubmitScreenProps> = ({ isSubscribed }) => {
 };
 
 const styles = StyleSheet.create({
+    container: {
+        backgroundColor: "#121212",
+        paddingLeft: 20,
+        paddingRight: 20,
+        marginTop: 0,
+    },
      title: {
         fontSize: 24,
         fontWeight: "bold",
@@ -285,7 +291,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: "#333",
         marginBottom: 10,
-        color: "#e0e0e0",
+        color: "white",
     },
     textArea: {
         backgroundColor: "#202020",
@@ -294,7 +300,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: "#333",
         marginBottom: 10,
-        color: "#e0e0e0",
+        color: "white",
         height: 80,
     },
     uploadButton: {
