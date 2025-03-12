@@ -37,13 +37,9 @@ const VideoReelItem: React.FC<{ videoUrl: string; isActive: boolean }> = ({ vide
   }, [isActive, player]);
 
   return (
-    <>
-      
-        <VideoView 
-        style={styles.reelVideo} 
-        player={player} 
-        allowsFullscreen 
-        allowsPictureInPicture />
+    <SafeAreaView>
+      <View style={styles.reelContentContainer}>
+        <VideoView style={styles.reelVideo} player={player} allowsFullscreen allowsPictureInPicture />
 
         {/* Centered play/pause control */}
         <TouchableOpacity
@@ -68,8 +64,8 @@ const VideoReelItem: React.FC<{ videoUrl: string; isActive: boolean }> = ({ vide
             <Text style={styles.controlText}>Share</Text>
           </TouchableOpacity>
         </View>
-      
-    </>
+      </View>
+    </SafeAreaView>
   );
 };
 
@@ -124,8 +120,23 @@ const Reels: React.FC = () => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-       
+    <View style={styles.container}>
+      {/* Header overlay */}
+      <View style={styles.header}>
+        <View style={styles.headerLeft}>
+          <Text style={styles.title}>Behind_The_Scenes</Text>
+          <View style={styles.socialIconsContainer}>
+            <Ionicons name="logo-youtube" size={20} color="#FF0000" style={styles.socialIcon} />
+            <FontAwesome name="spotify" size={20} color="#1DB954" style={styles.socialIcon} />
+            <Ionicons name="logo-instagram" size={20} color="#C13584" style={styles.socialIcon} />
+            <FontAwesome name="twitter" size={20} color="#fff" style={styles.socialIcon} />
+          </View>
+        </View>
+        <View style={styles.searchContainer}>
+          <MaterialIcons name="search" size={20} color="#fff" />
+        </View>
+      </View>
+
       <FlatList
         data={videos}
         keyExtractor={(item) => item.id}
@@ -137,10 +148,10 @@ const Reels: React.FC = () => {
         onEndReachedThreshold={0.5}
         onViewableItemsChanged={onViewableItemsChanged.current}
         viewabilityConfig={viewabilityConfig.current}
-        style={styles.flatList}
+        
       />
 
-  
+      {/* Advertise button at the bottom */}
       <TouchableOpacity
         style={styles.advertiseButton}
         onPress={async () => {
@@ -153,18 +164,14 @@ const Reels: React.FC = () => {
         }}>
         <Text style={styles.advertiseButtonText}>Advertise</Text>
       </TouchableOpacity>
-    </SafeAreaView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: '#000',
-  },
-  flatList: {
-    flex: 1,
-  },
+  }, 
   reelContentContainer: {
     width: width,
     height: ITEM_HEIGHT,

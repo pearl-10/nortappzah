@@ -40,6 +40,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 16,
     paddingTop: 10,
+    paddingBottom: 0,
+    marginBottom: 0,
     backgroundColor: 'transparent',
     borderBottomWidth: 1,
     borderBottomColor: '#ddd',
@@ -47,6 +49,7 @@ const styles = StyleSheet.create({
   },
   titleContainer: {
     flex: 1,
+    justifyContent: 'center',
   },
   title: {
     fontSize: 18,

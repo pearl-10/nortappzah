@@ -6,7 +6,7 @@ import SubmitComponent from '@/components/SubmitComponent';
 
 export default function SubmitScreen() {
   return (
-    <SafeAreaView>
+    <SafeAreaView >
        <SubmitComponent isSubscribed={true} />
     </SafeAreaView>
   );

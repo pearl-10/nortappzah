@@ -16,7 +16,6 @@ export default function TabLayout() {
 
   return (
     <>
-    <AppHeader title="Home" showProfileIcon={true} showSearchIcon={true} />
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
