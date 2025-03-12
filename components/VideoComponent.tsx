@@ -9,8 +9,8 @@ import { Query } from 'react-native-appwrite';
 import { Ionicons, FontAwesome, MaterialIcons } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-const { height, width } = Dimensions.get('window');
-const ITEM_HEIGHT = height;
+const { width } = Dimensions.get('window');
+const ITEM_HEIGHT = width * (9/16)
 
 type VideoItem = {
   id: string;
@@ -40,7 +40,12 @@ const VideoReelItem: React.FC<{ videoUrl: string; isActive: boolean }> = ({ vide
   return (
     <SafeAreaView>
       <View style={styles.reelContentContainer}>
-        <VideoView style={styles.reelVideo} player={player} allowsPictureInPicture />
+        <VideoView style={styles.reelVideo}
+         player={player} 
+         allowsPictureInPicture
+         allowsFullscreen
+         startsPictureInPictureAutomatically
+          />
 
         {/* Centered play/pause control */}
         <TouchableOpacity
@@ -126,7 +131,11 @@ const Reels: React.FC = () => {
         data={videos}
         keyExtractor={(item) => item.id}
         renderItem={({ item, index }) => (
-          <VideoReelItem videoUrl={item.url} isActive={index === activeIndex} />
+          <VideoReelItem 
+          videoUrl={item.url} 
+          isActive={index === activeIndex} 
+          
+          />
         )}
         pagingEnabled
         onEndReached={handleEndReached}
@@ -165,7 +174,7 @@ const styles = StyleSheet.create({
   },
   reelVideo: {
     width: width,
-    height: ITEM_HEIGHT,
+    height: ITEM_HEIGHT/2,
   },
   centeredPlayButton: {
     position: 'absolute',

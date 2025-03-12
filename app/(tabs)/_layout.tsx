@@ -40,7 +40,7 @@ export default function TabLayout() {
         name="explore"
         options={{
           title: 'Explore',
-          tabBarIcon: ({ color }) => <MaterialIcons name="explore" size={24} color={color} />,
+          tabBarIcon: ({ color }) => <MaterialIcons name="explore" size={26} color={color} />,
         }}
       />
       <Tabs.Screen
