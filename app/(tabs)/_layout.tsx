@@ -5,7 +5,6 @@ import { HapticTab } from '@/components/HapticTab';
 import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
-import  AppHeader  from '@/components/AppHeader';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
@@ -48,8 +47,8 @@ export default function TabLayout() {
         name="submit"
         options={{
           title: 'Submit',
-          tabBarIcon: ({ color }) => <FontAwesome name="send" size={24} color={color}  />,
-        }}
+          tabBarIcon: ({ color }) => <FontAwesome name="send" size={20} color={color}  />,
+        }} 
       />
       <Tabs.Screen
         name="tickets"

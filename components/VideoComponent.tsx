@@ -5,7 +5,8 @@ import { AppwriteClientFactory } from '@/services/appwrite/appwriteClient';
 import { useVideoPlayer, VideoView } from 'expo-video';
 import { useEvent } from 'expo';
 import { Query } from 'react-native-appwrite';
-import { Ionicons, FontAwesome, MaterialIcons } from '@expo/vector-icons'; // For icons
+
+import { Ionicons, FontAwesome, MaterialIcons } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const { height, width } = Dimensions.get('window');
@@ -39,7 +40,7 @@ const VideoReelItem: React.FC<{ videoUrl: string; isActive: boolean }> = ({ vide
   return (
     <SafeAreaView>
       <View style={styles.reelContentContainer}>
-        <VideoView style={styles.reelVideo} player={player} allowsFullscreen allowsPictureInPicture />
+        <VideoView style={styles.reelVideo} player={player} allowsPictureInPicture />
 
         {/* Centered play/pause control */}
         <TouchableOpacity
@@ -121,22 +122,6 @@ const Reels: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      {/* Header overlay */}
-      <View style={styles.header}>
-        <View style={styles.headerLeft}>
-          <Text style={styles.title}>Behind_The_Scenes</Text>
-          <View style={styles.socialIconsContainer}>
-            <Ionicons name="logo-youtube" size={20} color="#FF0000" style={styles.socialIcon} />
-            <FontAwesome name="spotify" size={20} color="#1DB954" style={styles.socialIcon} />
-            <Ionicons name="logo-instagram" size={20} color="#C13584" style={styles.socialIcon} />
-            <FontAwesome name="twitter" size={20} color="#fff" style={styles.socialIcon} />
-          </View>
-        </View>
-        <View style={styles.searchContainer}>
-          <MaterialIcons name="search" size={20} color="#fff" />
-        </View>
-      </View>
-
       <FlatList
         data={videos}
         keyExtractor={(item) => item.id}

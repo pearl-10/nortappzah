@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import Ionicons from '@expo/vector-icons/Ionicons'
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { Ionicons, FontAwesome, MaterialIcons } from '@expo/vector-icons';
 
 interface AppHeaderProps {
   title?: string;
@@ -11,25 +10,20 @@ interface AppHeaderProps {
 
 const AppHeader: React.FC<AppHeaderProps> = ({ title, showProfileIcon = false, showSearchIcon = false }) => {
   return (
-    <SafeAreaView>
     <View style={styles.header}>
-      <View style={styles.titleContainer}>
-        {title && <Text style={styles.title}>{title}</Text>}
-      </View>
-      <View style={styles.iconsContainer}>
-        {showSearchIcon && (
-          <TouchableOpacity style={styles.iconButton}>
-            <Ionicons name="search-outline" size={24} color="black" />
-          </TouchableOpacity>
-        )}
-        {showProfileIcon && (
-          <TouchableOpacity style={styles.iconButton}>
-            <Ionicons name="person-circle-outline" size={24} color="black" />
-          </TouchableOpacity>
-        )}
+    <View style={styles.headerLeft}>
+      <Text style={styles.title}>Behind_The_Scenes</Text>
+      <View style={styles.socialIconsContainer}>
+        <Ionicons name="logo-youtube" size={20} color="#FF0000" style={styles.socialIcon} />
+        <FontAwesome name="spotify" size={20} color="#1DB954" style={styles.socialIcon} />
+        <Ionicons name="logo-instagram" size={20} color="#C13584" style={styles.socialIcon} />
+        <FontAwesome name="twitter" size={20} color="#fff" style={styles.socialIcon} />
       </View>
     </View>
-    </SafeAreaView>
+    <View style={styles.searchContainer}>
+      <MaterialIcons name="search" size={20} color="#fff" />
+    </View>
+  </View>
   );
 };
 
